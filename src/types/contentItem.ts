@@ -11,4 +11,6 @@ export interface ContentItem {
   isLocked: boolean;
   publishStartAt?: string;
   publishEndAt?: string;
+  templateId?: string;
+  portalId?: string;
 }
