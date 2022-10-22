@@ -5,7 +5,7 @@ import { FormatType } from "./formatType";
 export interface ContentItem {
   contentId: string;
   contentSetId: string;
-  contenType: ContentType;
+  contentType: ContentType;
   formatType: FormatType;
   availability: AvailabilityType;
   isLocked: boolean;

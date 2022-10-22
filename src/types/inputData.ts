@@ -1,15 +1,11 @@
-import { ContentType } from "./contentType";
 import { ContentItem } from "./contentItem";
-import { FormatType } from "./formatType";
 import { LevelType } from "./levelType";
+import { FormatFilters } from "./formatFilters";
 
 export interface InputData {
   levels: Array<{
     levelType: LevelType;
     contentItems: Array<ContentItem>;
   }>;
-  filter?: {
-    contentType?: ContentType;
-    formatType?: FormatType;
-  };
+  filter?: FormatFilters;
 }

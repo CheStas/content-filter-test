@@ -14,7 +14,7 @@ describe("test app", () => {
           {
             contentId: "pnRMgdJKJ0BAD4E",
             contentSetId: "WHEKxCFDUQ",
-            contenType: ContentType.DIGITALASSET,
+            contentType: ContentType.DIGITALASSET,
             formatType: FormatType.VIDEO,
             availability: AvailabilityType.SHOW,
             isLocked: false,
@@ -29,7 +29,7 @@ describe("test app", () => {
           {
             contentId: "pnRMgdJKJ0BAD4E",
             contentSetId: "WHEKxCFDUQ",
-            contenType: ContentType.DIGITALASSET,
+            contentType: ContentType.DIGITALASSET,
             formatType: FormatType.VIDEO,
             availability: AvailabilityType.SHOW,
             isLocked: true,
@@ -45,7 +45,7 @@ describe("test app", () => {
           {
             contentId: "pnRMgdJKJ0BAD4E",
             contentSetId: "WHEKxCFDUQ",
-            contenType: ContentType.DIGITALASSET,
+            contentType: ContentType.DIGITALASSET,
             formatType: FormatType.VIDEO,
             availability: AvailabilityType.SHOW,
             isLocked: true,
@@ -57,7 +57,7 @@ describe("test app", () => {
           {
             contentId: "QjwGA8geKb7p",
             contentSetId: "JC8UbVBFJQ",
-            contenType: ContentType.DIGITALASSET,
+            contentType: ContentType.DIGITALASSET,
             formatType: FormatType.DOCUMENT,
             availability: AvailabilityType.SHOW,
             isLocked: false,
