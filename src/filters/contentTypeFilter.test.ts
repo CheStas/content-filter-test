@@ -5,6 +5,31 @@ import { FormatType } from "../types/formatType";
 import { ContentTypeFilter } from "./contentTypeFilter";
 
 describe("test contentTypeFilter", () => {
+  test("setNext", () => {
+    const item: ContentItem = {
+      contentId: "pnRMgdJKJ0BAD4E",
+      contentSetId: "WHEKxCFDUQ",
+      contentType: ContentType.DIGITALASSET,
+      formatType: FormatType.VIDEO,
+      availability: AvailabilityType.SHOW,
+      isLocked: false,
+      publishStartAt: "2021-06-01T00:00:00-0400",
+      publishEndAt: "2021-07-01T00:00:00-0400",
+    };
+
+    const contentTypeFilter = new ContentTypeFilter();
+    const contentTypeFilterNext = new ContentTypeFilter();
+
+    const setNextSpy = jest.spyOn(contentTypeFilter, "setNext");
+    const filterNextSpy = jest.spyOn(contentTypeFilterNext, "filter");
+
+    contentTypeFilter.setNext(contentTypeFilterNext);
+    const result = contentTypeFilter.filter({ item });
+    expect(setNextSpy).toHaveBeenCalled();
+    expect(filterNextSpy).toHaveBeenCalledWith({ item });
+    expect(result).toBe(item);
+  });
+
   it("should return item", () => {
     const item: ContentItem = {
       contentId: "pnRMgdJKJ0BAD4E",

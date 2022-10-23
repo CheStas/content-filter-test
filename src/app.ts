@@ -1,17 +1,25 @@
+import { AvailabilityFilter } from "./filters/availabilityFilter";
 import { ContentTypeFilter } from "./filters/contentTypeFilter";
 import { FormatTypeFilter } from "./filters/formatTypeFilter";
-import { LockedFilter } from "./filters/lockedFilter";
+import { IsLockedFilter } from "./filters/isLockedFilter";
+import { PublishFieldsFilter } from "./filters/publishFieldsFilter";
 import { ContentItem } from "./types/contentItem";
 import { InputData } from "./types/inputData";
 import { OutputItem } from "./types/outputItem";
 
 export default function app(inputData: InputData): OutputItem[] {
   const contentItems = new Map();
+
   const filter = new ContentTypeFilter();
   const formatTypeFilter = new FormatTypeFilter();
-  const lockedFilter = new LockedFilter();
-
-  filter.setNext(formatTypeFilter).setNext(lockedFilter);
+  const isLockedFilter = new IsLockedFilter();
+  const availabilityFilter = new AvailabilityFilter();
+  const publishFieldsFilter = new PublishFieldsFilter();
+  filter
+    .setNext(formatTypeFilter)
+    .setNext(isLockedFilter)
+    .setNext(availabilityFilter)
+    .setNext(publishFieldsFilter);
 
   for (const level of inputData.levels) {
     for (const contentItem of level.contentItems) {

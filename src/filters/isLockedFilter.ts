@@ -3,7 +3,7 @@ import { ContentItem } from "../types/contentItem";
 import { Maybe } from "../types/general";
 import { FilterHandlerParams } from "./filter.interface";
 
-export class LockedFilter extends BaseFilter {
+export class IsLockedFilter extends BaseFilter {
   public filter({
     item,
     upstreamItem,
