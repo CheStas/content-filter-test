@@ -2,7 +2,7 @@ import { AvailabilityType } from "../types/availabilityType";
 import { ContentItem } from "../types/contentItem";
 import { ContentType } from "../types/contentType";
 import { FormatType } from "../types/formatType";
-import { IsLockedFilter } from "./isLockedFilter";
+import { IsLockedFilter } from "./isLocked.filter";
 
 describe("test isLockedFilter", () => {
   const item: ContentItem = {

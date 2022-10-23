@@ -1,4 +1,4 @@
-import { BaseFilter } from "./baseFilter";
+import { BaseFilter } from "./base.filter";
 import { ContentItem } from "../types/contentItem";
 import { Maybe } from "../types/general";
 import { FilterHandlerParams } from "./filter.interface";

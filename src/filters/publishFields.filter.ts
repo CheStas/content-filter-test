@@ -1,10 +1,9 @@
-import { BaseFilter } from "./baseFilter";
+import { BaseFilter } from "./base.filter";
 import { ContentItem } from "../types/contentItem";
 import { Maybe } from "../types/general";
 import { FilterHandlerParams } from "./filter.interface";
-import { AvailabilityType } from "../types/availabilityType";
 
-export class AvailabilityFilter extends BaseFilter {
+export class PublishFieldsFilter extends BaseFilter {
   public filter({
     item,
     upstreamItem,
@@ -16,11 +15,11 @@ export class AvailabilityFilter extends BaseFilter {
     const updatedItem = {
       ...item,
     };
-    if (
-      upstreamItem.availability === AvailabilityType.ALWAYS ||
-      upstreamItem.availability === AvailabilityType.NEVER
-    ) {
-      updatedItem.availability = upstreamItem.availability;
+    if (upstreamItem.publishStartAt && !item.publishStartAt) {
+      updatedItem.publishStartAt = upstreamItem.publishStartAt;
+    }
+    if (upstreamItem.publishEndAt && !item.publishEndAt) {
+      updatedItem.publishEndAt = upstreamItem.publishEndAt;
     }
     return super.filter({ item: updatedItem, upstreamItem, filterOptions });
   }

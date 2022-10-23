@@ -2,7 +2,7 @@ import { AvailabilityType } from "../types/availabilityType";
 import { ContentItem } from "../types/contentItem";
 import { ContentType } from "../types/contentType";
 import { FormatType } from "../types/formatType";
-import { FormatTypeFilter } from "./formatTypeFilter";
+import { FormatTypeFilter } from "./formatType.filter";
 
 describe("test formatTypeFilter", () => {
   it("should return item", () => {

@@ -2,7 +2,7 @@ import { AvailabilityType } from "../types/availabilityType";
 import { ContentItem } from "../types/contentItem";
 import { ContentType } from "../types/contentType";
 import { FormatType } from "../types/formatType";
-import { ContentTypeFilter } from "./contentTypeFilter";
+import { ContentTypeFilter } from "./contentType.filter";
 
 describe("test contentTypeFilter", () => {
   test("setNext", () => {
