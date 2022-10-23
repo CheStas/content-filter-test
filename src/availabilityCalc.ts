@@ -14,7 +14,7 @@ export class AvailabilityCalc {
     this.rule = rule;
   }
 
-  getContentAvailability(inputData: InputData): Array<OutputItem> {
+  getContentAvailability(inputData: InputData, relativeDate?: string): Array<OutputItem> {
     for (const level of inputData.levels) {
       for (const contentItem of level.contentItems) {
         const upstreamItem = this.contentItems.get(contentItem.contentId);
@@ -31,7 +31,7 @@ export class AvailabilityCalc {
     }
 
     return [...this.contentItems.values()].map((el: ContentItem) => {
-      const isAvailable = this.rule.interpret(el);
+      const isAvailable = this.rule.interpret(el, relativeDate);
       return {
         contentId: el.contentId,
         isAvailable,

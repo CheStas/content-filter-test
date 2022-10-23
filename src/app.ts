@@ -27,5 +27,5 @@ export default function app(inputData: InputData): OutputItem[] {
   ]);
 
   const availabilityCalc = new AvailabilityCalc(filter, combineRule);
-  return availabilityCalc.getContentAvailability(inputData);
+  return availabilityCalc.getContentAvailability(inputData, new Date().toISOString());
 }
