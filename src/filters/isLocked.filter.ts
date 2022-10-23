@@ -10,7 +10,14 @@ export class IsLockedFilter extends BaseFilter {
     filterOptions,
   }: FilterHandlerParams): Maybe<ContentItem> {
     if (upstreamItem?.isLocked) {
-      return upstreamItem;
+      const updatedItem = {
+        ...item,
+        isLocked: true,
+        availability: upstreamItem.availability,
+        publishStartAt: upstreamItem.publishStartAt,
+        publishEndAt: upstreamItem.publishEndAt,
+      };
+      return updatedItem;
     }
     return super.filter({ item, upstreamItem, filterOptions });
   }
