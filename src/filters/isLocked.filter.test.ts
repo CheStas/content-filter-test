@@ -53,7 +53,7 @@ describe("test isLockedFilter", () => {
       isLockedFilter.filter({ item, upstreamItem: upstreamContentItem })
     ).not.toBe(item);
   });
-  
+
   it("should return upstreamItem fields if upstreamItem is locked", () => {
     const isLockedFilter = new IsLockedFilter();
     const item: ContentItem = {
@@ -85,7 +85,7 @@ describe("test isLockedFilter", () => {
       isLocked: true,
       publishStartAt: "2021-06-01T00:00:00-0400",
       publishEndAt: "2021-07-01T00:00:00-0400",
-    }
+    };
 
     expect(
       isLockedFilter.filter({ item, upstreamItem: upstreamContentItem })

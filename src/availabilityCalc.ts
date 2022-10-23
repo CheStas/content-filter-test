@@ -14,7 +14,10 @@ export class AvailabilityCalc {
     this.rule = rule;
   }
 
-  getContentAvailability(inputData: InputData, relativeDate?: string): Array<OutputItem> {
+  getContentAvailability(
+    inputData: InputData,
+    relativeDate?: string
+  ): Array<OutputItem> {
     for (const level of inputData.levels) {
       for (const contentItem of level.contentItems) {
         const upstreamItem = this.contentItems.get(contentItem.contentId);
