@@ -8,7 +8,7 @@ export class CombineRule implements Rule {
     this.rules = rules;
   }
 
-  interpret(item: ContentItem): boolean {
-    return this.rules.every((rule) => rule.interpret(item));
+  interpret(item: ContentItem, relativeDate?: string): boolean {
+    return this.rules.every((rule) => rule.interpret(item, relativeDate));
   }
 }

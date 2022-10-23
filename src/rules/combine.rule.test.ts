@@ -36,7 +36,7 @@ describe("test combineRule", () => {
     const testRuleTrueSpy = jest.spyOn(testRuleTrue, "interpret");
     const testRuleFalseSpy = jest.spyOn(testRuleFalse, "interpret");
     expect(combineRule.interpret(item)).toBe(false);
-    expect(testRuleTrueSpy).toBeCalledWith(item);
-    expect(testRuleFalseSpy).toBeCalledWith(item);
+    expect(testRuleTrueSpy).toBeCalledWith(item, undefined);
+    expect(testRuleFalseSpy).toBeCalledWith(item, undefined);
   });
 });
