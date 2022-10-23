@@ -73,7 +73,7 @@ describe("test app", () => {
   const output = [
     {
       contentId: "pnRMgdJKJ0BAD4E",
-      isAvailable: true,
+      isAvailable: false,
     },
     {
       contentId: "QjwGA8geKb7p",
